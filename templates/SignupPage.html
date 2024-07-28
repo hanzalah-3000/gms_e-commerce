@@ -1,0 +1,110 @@
+{%load static%}
+<html>
+<head>
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="{% static "css/SignupPage.css" %}">
+ 
+  <script>
+    function validate() {
+      var password = document.getElementById("password").value;
+      var cpassword = document.getElementById("cpassword").value;
+
+      if (password === cpassword && password !== "") {
+        document.getElementById("Message").textContent = "Record Submitted Successfully";
+
+        setTimeout(function() {
+          window.location.href = "../LOGIN/login.html";
+        }, 2000);
+      } else {
+        document.getElementById("Message").textContent = "Invalid Password";
+        event.preventDefault();
+      }
+    }
+  </script>
+</head>
+<body>
+    <nav class="navigation">
+
+    <a href="#" class="logo">
+
+        <span>Grocery</span> Management System
+
+    </a>
+
+    <ul class="menu">
+
+        <li>
+            <a href="{% url "home" %}">
+                
+                Home
+
+            </a>
+        
+        </li>
+
+        <li>
+
+            <a href="#">
+                
+                Cart
+
+            </a>
+        
+        </li>
+
+       
+
+        <li>
+            
+            <a href="#" class="active">
+                    
+                Sign&nbsp;up
+                
+            </a>
+            
+        </li>
+
+        
+        <li>
+            
+          <a href="{% url "login" %}">
+
+                Login
+            
+            </a>
+        
+        </li>
+
+</ul>
+</nav>
+  <div class="container">
+    {%if registered%}
+      <h1>Thank You for registering</h1>
+    {%else%}
+    <h1>Sign Up</h1>
+    <form name="signup" method="post">
+      {% csrf_token %}
+      {{user_form.as_p}}
+      {{profile_form.as_p}}
+      
+      {% comment %} First Name <input type="text" class="name" name="fname" pattern="[a-zA-z]{1,20}" required><br>
+      Last Name <input type="text" class="name" name="lname" pattern="[a-zA-z]{1,20}" required><br>
+      Email <input type="email" name="email" placeholder="you@example.com" required><br><br>
+      Role:
+      <input type="radio" name="role" value="Buyer" checked>Buyer
+      <input type="radio" name="role" value="Merchant">Merchant<br><br>
+       
+
+      CNIC <input type="text" name="cnic" id="cnic" placeholder="00000-1111111-2" required pattern="[0-9]{5}[-][0-9]{7}[-][0-9]{1}"><br>
+      Address <textarea name="address" required></textarea><br> 
+      Password <input type="password" name="password" id="password" required><br>
+      Confirm Password <input type="password" name="cpwd" id="cpassword" required><br><br>   {% endcomment %}
+      <input type="Submit">
+    </form>
+    <p id="Message" class="msg"></p>
+  </div>
+  {%endif%}
+</body>
+</html> 
+
+

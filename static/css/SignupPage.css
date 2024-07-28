@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.logo{
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #202020;
+}
+.logo span{
+  color: #40aa54;
+}
+.menu li a:hover,
+    .menu .active{
+        color: #40aa54;
+        transition: all ease 0.3s;
+    }
+body{
+  margin: 0px;
+  padding: 0px;
+  font-family: poppins;
+}
+::selection{
+  color:#ffffff;
+  background-color:#40aa54;}
+   
+  .navigation{
+      display: flex;
+      justify-content: space-between;
+      /* align-items: center; */
+      padding: 35px;
+      max-width: 1070px; 
+      width: 100%;
+      margin: auto;
+      margin-left: 90px;
+  }
+  .menu{
+      display: flex;
+    align-items:left;
+  }
+  .menu li a{
+      padding: 3px 10px;
+      margin: 0px 15px;
+      color: #3b3b3b;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: all ease 0.3s;
+    
+  }
+
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  color:#ffffff;
+  background-color:#40aa54;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color:darkgreen;
+}
+
+.msg {
+  color: #ff0000;
+  text-align: center;
+  margin-top: 10px;
+}

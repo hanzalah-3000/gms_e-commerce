@@ -1,0 +1,223 @@
+<DOCTYPE html>
+{% load static %}
+<html>
+
+    <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Home Page
+
+    </title>
+
+    <link rel="stylesheet" href="{% static "css/HomePage.css"%}">
+
+    <link rel="shortcut icon" href="images/fav-icon.png"/>
+
+    
+    </head>
+
+    <body>
+
+        <nav class="navigation">
+
+            <a href="#" class="logo">
+
+                <span>Grocery</span> Management System
+
+            </a>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#" class="active">
+                        
+                        Home
+
+                    </a>
+                
+                </li>
+
+                <li>
+
+                    <a href="#">
+                        
+                        Cart
+
+                    </a>
+                
+                </li>
+
+               
+				
+                <li>
+                    
+                    <a href="{% url "signup" %}">
+
+                        Sign&nbsp;up
+                        
+                    </a>
+                    
+                </li>
+
+                {% if user.is_authenticated %}
+                <li>
+                    
+                    <a href="{% url "logout" %}">
+
+                        Logout
+                    
+                    </a>
+                
+                </li>
+                {%else%}
+                <li>
+                    
+                    <a href="{% url "login" %}">
+
+                        Login
+                    
+                    </a>
+                
+                </li>
+                {%endif%}
+				</ul>
+
+        </nav>
+
+        <section id="category">
+
+            <div class="category-heading">
+
+                <h2>
+                    
+                    Category
+                
+                </h2>
+
+                <span>
+                    
+                    All
+                
+                </span>
+
+            </div>
+
+            <div class="category-container">
+
+                <a class="category-box" href = 'Fruits Category Page HTML.html'>
+					<img alt="Fruits and Vegetables" src="https://i.imgur.com/lvk68rp.png">
+					<span>Fruits & <br> Vegetables</span>
+				</a>
+				
+                <a class="category-box" href = 'Medicine Category Page HTML.html'>
+                    <img alt="Medicines" src="https://i.imgur.com/4sjlmg3.png">
+                    <span>Medicine</span>
+                </a>
+                
+                <a class="category-box" href = 'Beauty Category Page HTML.html'>
+                    <img alt="Beauty Products" src="https://i.imgur.com/Bm0yLex.png">
+                    <span>Beauty</span>
+                </a>
+                
+            </div>
+            
+        </section>
+       <section id="popular-product">
+            <div class="product-heading">
+                <h3>Popular Product</h3>
+                <span>All</span>
+            </div>
+            <div class="product-container">
+                <div class="product-box">
+                    <img alt="apple" src="https://i.imgur.com/vUJ2JKU.png">
+                    <strong>Apple</strong>
+                    <span class="quantity">1 KG</span>
+                    <span class="price">Rs. 100</span>
+                    
+                    <a href="../CART/cartpage.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                
+                <div class="product-box">
+                    <img alt="chili" src="https://i.imgur.com/rFhSMZN.png">
+                    <strong>Chili</strong>
+                    <span class="quantity">1 KG</span>
+                    <span class="price">Rs. 80</span>
+                    
+                    <a href="../CART/cartpage.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                
+                <div class="product-box">
+                    <img alt="apple" src="https://i.imgur.com/sGLggWL.jpg">
+                    <strong>Onion</strong>
+                    <span class="quantity">1 KG</span>
+                    <span class="price">Rs. 50</span>
+                    
+                    <a href="../CART/cartpage.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                
+                <div class="product-box">
+                    <img alt="apple" src="https://i.imgur.com/WFjH6ui.png">
+                    <strong>Potato</strong>
+                    <span class="quantity">1 KG</span>
+                    <span class="price">Rs. 60</span>
+                    
+                    <a href="../CART/cartpage.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                
+                <div class="product-box">
+                    <img alt="apple" src="https://i.imgur.com/XVLuy2J.png">
+                    <strong>Garlic</strong>
+                    <span class="quantity">1 KG</span>
+                    <span class="price">Rs. 50</span>
+                    
+                    <a href="../CART/cartpage.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                
+                <div class="product-box">
+                    <img alt="apple" src="https://i.imgur.com/8l5hDhS.png">
+                    <strong>Tomato</strong>
+                    <span class="quantity">1 KG</span>
+                    <span class="price">Rs. 80</span>
+                    
+                    <a href="../CART/cartpage.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </body>
+</html>

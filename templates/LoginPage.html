@@ -1,0 +1,106 @@
+{%load static%}
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="{% static "css/LoginPage.css" %}">
+  <script> 
+  function login(){
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var merchant= document.getElementById("Merchant");
+  var buyer= document.getElementById("Buyer");
+  
+  if (username != "" && password != "") {
+    if(merchant.checked){
+      document.getElementById("Message").textContent = "Login Successfully";
+      setTimeout(function() {
+          window.location.href = "../MERCHANT/merchantpage.html";
+        }, 2000);
+      }
+    else if(buyer.checked){
+      document.getElementById("Message").textContent = "Login Successfully";
+      setTimeout(function() {
+          window.location.href = "../HOME/Home Page HTML.html";
+        }, 2000);
+      }
+    } 
+  else {
+    document.getElementById("Message").textContent = "Invalid username or password";
+    event.preventDefault();
+    }
+  }
+</script>
+</head>
+<body>
+  <nav class="navigation">
+
+    <a href="#" class="logo">
+
+        <span>Grocery</span> Management System
+
+    </a>
+
+    <ul class="menu">
+
+        <li>
+          <a href="{% url "home" %}">
+
+                Home
+
+            </a>
+        
+        </li>
+
+        <li>
+
+            <a href="#">
+                
+                Cart
+
+            </a>
+        
+        </li>
+
+       
+
+        <li>
+            
+          <a href="{% url "signup" %}">
+
+                Sign&nbsp;up
+                
+            </a>
+            
+        </li>
+
+        
+        <li>
+            
+            <a href="#"class="active">
+                
+                Login
+            
+            </a>
+        
+        </li>
+
+</ul>
+
+</nav>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="loginForm" method='post' >
+      {%csrf_token%}
+     <input type="text" class="name" name="username" id="username" placeholder="Username" required><br>
+      <input type="password" name="password" id="password" placeholder="Password" required><br>
+      {% comment %} Role:
+      <input type="radio" name="role" id="Buyer" value="Buyer" checked>Buyer 
+      <input type="radio" name="role" id="Merchant" value="Merchant">Merchant<br><br>
+       {% endcomment %}
+
+     <input type='submit'>
+    </form>
+    <p id="Message" class="msg"></p>
+  </div>
+</body>
+</html>
